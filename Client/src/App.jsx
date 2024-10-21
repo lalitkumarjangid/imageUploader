@@ -5,6 +5,7 @@ import Home from './Home.jsx'
 import Login from './Pages/Login.jsx'
 import Dashboard from './Pages/Dashboard.jsx'
 import './index.css'
+import NotFound from './Pages/notfound.jsx';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )
