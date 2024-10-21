@@ -5,7 +5,8 @@ import Home from './Home.jsx'
 import Login from './Pages/Login.jsx'
 import Dashboard from './Pages/Dashboard.jsx'
 import './index.css'
-import NotFoundPage from './Pages/notfound.jsx';
+import NotFoundPage from './Pages/NotFoundPage.jsx';
+
 
 
 
@@ -25,7 +26,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </>
   )
