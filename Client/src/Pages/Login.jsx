@@ -16,12 +16,12 @@ const Login = () => {
     const dataToSend = { email, password };
 
     try {
-        const response = await axios.post(`${BASE_URL}/login`, dataToSend, {
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*', // This header is typically set by the server
-            },
-          });
+      const response = await axios.post(`${BASE_URL}/login`, dataToSend, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*', // This header is typically set by the server
+        },
+      });
 
       setMessage('Login successful!');
       toast.success('Login successful!');
@@ -34,14 +34,11 @@ const Login = () => {
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-center bg-blue-100"
-      style={{ fontFamily: 'Poppins, sans-serif' }} // Inline CSS for font family
-    >
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
       <Toaster />
       {/* Login Box */}
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-blue-600 mb-6 text-center">Login</h2>
+      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-2xl font-bold text-blue-500 mb-6 text-center">Login</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email */}
@@ -53,7 +50,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Email"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full p-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
@@ -66,7 +63,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Password"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full p-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
@@ -81,7 +78,7 @@ const Login = () => {
 
         {message && <p className="text-center text-red-500 mt-4">{message}</p>}
 
-        {/* Clerk SignIn Button */}
+        {/* Clerk SignIn Button (Commented Out) */}
         {/* <div className="text-center mt-4">
           <SignInButton>
             <button className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
@@ -91,9 +88,9 @@ const Login = () => {
         </div> */}
 
         {/* Signup Link */}
-        <p className="text-center text-gray-500 mt-4">
+        <p className="text-center text-gray-400 mt-4">
           Don't have an account?{' '}
-          <a href="/SignUp" className="text-blue-600 hover:underline">
+          <a href="/SignUp" className="text-blue-500 hover:underline">
             Sign Up
           </a>
         </p>

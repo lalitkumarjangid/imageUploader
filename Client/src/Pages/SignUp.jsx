@@ -39,6 +39,8 @@ const SignUp = () => {
       });
       setMessage('Sign up successful!');
       toast.success('Sign up successful!');
+      // Optionally navigate to a different page on successful sign up
+      navigate('/dashboard');
     } catch (error) {
       setMessage('Sign up failed. Please try again.');
       toast.error('Sign up failed. Please try again.');
@@ -46,13 +48,10 @@ const SignUp = () => {
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-start bg-blue-900"
-      style={{ fontFamily: 'Poppins, sans-serif' }} // Inline CSS for font family
-    >
+    <div className="min-h-screen flex flex-col items-center justify-start bg-gradient-to-b from-gray-900 to-gray-800">
       <Toaster />
       {/* Header Bar */}
-      <div className="w-full bg-blue-600 text-white flex justify-between items-center p-4">
+      <div className="w-full bg-gray-800 text-white flex justify-between items-center p-4">
         {/* Left Side Icon */}
         <div className="text-lg">
           <i className="far fa-calendar-alt"></i> {/* Calendar icon placeholder */}
@@ -61,18 +60,18 @@ const SignUp = () => {
         {/* Right Side Buttons */}
         <div>
           <button
-            className="text-white px-4 py-2 rounded hover:bg-blue-700"
+            className="text-white px-4 py-2 rounded hover:bg-gray-700"
             onClick={() => navigate('/login')}
           >
             Login
           </button>
-          <button className="bg-white text-blue-600 px-4 py-2 ml-2 rounded hover:bg-gray-200">Sign Up</button>
+          <button className="bg-blue-600 text-white px-4 py-2 ml-2 rounded hover:bg-blue-700">Sign Up</button>
         </div>
       </div>
 
       {/* Signup Box */}
-      <div className="bg-white p-8 mt-12 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-blue-600 mb-6 text-center">Signup With</h2>
+      <div className="bg-gray-800 p-8 mt-12 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-2xl font-bold text-blue-500 mb-6 text-center">Signup With</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* First Name */}
@@ -84,7 +83,7 @@ const SignUp = () => {
               onChange={handleChange}
               required
               placeholder="First Name"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full p-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
               style={{ boxSizing: 'border-box' }} // Inline CSS for precise box model
             />
           </div>
@@ -98,7 +97,7 @@ const SignUp = () => {
               onChange={handleChange}
               required
               placeholder="Last Name"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full p-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
@@ -111,7 +110,7 @@ const SignUp = () => {
               onChange={handleChange}
               required
               placeholder="Email"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full p-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
@@ -124,7 +123,7 @@ const SignUp = () => {
               onChange={handleChange}
               required
               placeholder="Password"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full p-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
@@ -137,7 +136,7 @@ const SignUp = () => {
               onChange={handleChange}
               required
               placeholder="Confirm Password"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full p-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
@@ -152,7 +151,7 @@ const SignUp = () => {
 
         {message && <p className="text-center text-red-500 mt-4">{message}</p>}
 
-        {/* Clerk SignUp Button */}
+        {/* Clerk SignUp Button (Commented Out) */}
         {/* <div className="text-center mt-4">
           <SignUpButton>
             <button className="w-full bg-blue-900 text-white py-3 rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-600">
@@ -162,9 +161,9 @@ const SignUp = () => {
         </div> */}
 
         {/* Login Link */}
-        <p className="text-center text-gray-500 mt-4">
+        <p className="text-center text-gray-400 mt-4">
           Already have an account?{' '}
-          <a href="/login" className="text-blue-600 hover:underline">
+          <a href="/login" className="text-blue-500 hover:underline">
             Login
           </a>
         </p>
