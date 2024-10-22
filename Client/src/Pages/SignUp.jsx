@@ -163,9 +163,12 @@ const SignUp = () => {
         {/* Login Link */}
         <p className="text-center text-gray-400 mt-4">
           Already have an account?{' '}
-          <a href="/login" className="text-blue-500 hover:underline">
+          <button
+            className="text-white px-2 py-1 rounded hover:bg-gray-700"
+            onClick={() => navigate('/login')}
+          >
             Login
-          </a>
+          </button>
         </p>
       </div>
     </div>

@@ -90,9 +90,12 @@ const Login = () => {
         {/* Signup Link */}
         <p className="text-center text-gray-400 mt-4">
           Don't have an account?{' '}
-          <a href="/SignUp" className="text-blue-500 hover:underline">
+           <button
+            className="text-white px-4 py-2 rounded hover:bg-gray-700"
+            onClick={() => navigate('/SignUp')}
+          >
             Sign Up
-          </a>
+          </button>
         </p>
       </div>
     </div>
