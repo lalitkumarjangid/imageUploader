@@ -12,9 +12,8 @@ if (!PUBLISHABLE_KEY) {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-        <App />
-      </ClerkProvider>
+      <App />
+
     </BrowserRouter>
   </StrictMode>
 )
